@@ -162,7 +162,7 @@ public class Exercicios {
 			int numero = leitor.nextInt();
 			
 			if(numero == 0) {
-				System.out.println("O fatorial de 0 é 0!");
+				System.out.println("O fatorial de 0 é 1!");
 			}else if(numero >= 1 && numero <= 10) {
 				for(int i = numero; i > 0; i--) {
 					totalFatorial *= i;
