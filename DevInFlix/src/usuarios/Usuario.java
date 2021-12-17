@@ -1,5 +1,7 @@
 package usuarios;
 
+import java.util.List;
+
 import filmes.Filme;
 
 public class Usuario {
@@ -7,6 +9,13 @@ public class Usuario {
 	private String dataNascimento;
 	private String endereco;
 	
+	public Usuario(String nome, String dataNascimento, String endereco) {
+		super();
+		this.nome = nome;
+		this.dataNascimento = dataNascimento;
+		this.endereco = endereco;
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -41,5 +50,14 @@ public class Usuario {
 	
 	public void indicarFilme(Usuario usuario, Filme filme) {
 		System.out.println(usuario.getNome() + " estou te recomendando esse filme: " + filme.getNome() + " porque ele é excelente!!!");
+	}
+	
+	public void sugerirFilmesPlataforma(List<Filme> filmes) {
+		System.out.println("Os seguintes filmes foram sugeridos para plataforma:");
+		
+		for(Filme filme:filmes) {
+			System.out.println(filme.toString());
+		}
+		
 	}
 }

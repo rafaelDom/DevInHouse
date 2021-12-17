@@ -6,6 +6,14 @@ public class Filme {
 	private String link;
 	private Enum<Genero> genero;
 	
+	public Filme(String nome, String sinopse, String link, Enum<Genero> genero) {
+		super();
+		this.nome = nome;
+		this.sinopse = sinopse;
+		this.link = link;
+		this.genero = genero;
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -33,4 +41,15 @@ public class Filme {
 	public Enum<Genero> getGenero() {
 		return genero;
 	}
+
+	public void setGenero(Enum<Genero> genero) {
+		this.genero = genero;
+	}
+
+	@Override
+	public String toString() {
+		return "Filme [nome=" + nome + ", sinopse=" + sinopse + ", link=" + link + ", genero=" + genero + "]";
+	}
+	
+	
 }
