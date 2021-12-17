@@ -47,8 +47,6 @@ public class Main {
 		usuario3.descurtirFilme(filme6);
 		usuario3.indicarFilme(usuario4, filme6);
 		usuario3.sugerirFilmesPlataforma(listaFilme);
-
-
 		
 	}
 
