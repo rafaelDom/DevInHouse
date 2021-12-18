@@ -13,6 +13,21 @@ public class Main {
 		
 		
 		
+		Usuario usuario1 = new Usuario("Usuario1", "01/01/2001", "Rua XPTO n 185");
+		Filme filme1 = new Filme("Filme1","XXXXX","www.www.com.br/fimes",Genero.ACAO);
+		Filme filme2 = new Filme("Filme2","XXXXX","www.www.com.br/fimes",Genero.AVENTURA);
+		Filme filme3 = new Filme("Filme3","XXXXX","www.www.com.br/fimes",Genero.COMEDIA);
+		usuario1.assistirFilme(filme1);
+		usuario1.assistirFilme(filme1);
+		usuario1.assistirFilme(filme1);
+		usuario1.assistirFilme(filme2);
+		usuario1.assistirFilme(filme2);
+		usuario1.assistirFilme(filme3);
+		usuario1.getGeneroFilmeMaisAssitido();
+		
+		
+		
+		
 		
 		/*
 		TESTE PARA O EXERCICIO [M1S03] - Ex 7 - O melhor catálogo de filmes++

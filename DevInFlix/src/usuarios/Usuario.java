@@ -2,9 +2,14 @@ package usuarios;
 
 import java.time.Period;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import filmes.Filme;
+import filmes.Genero;
 import recomendacoes.RecomendaFilme;
 
 public class Usuario {
@@ -12,6 +17,11 @@ public class Usuario {
 	private String dataNascimento;
 	private String endereco;
 	private List<RecomendaFilme> filmesRecomendados = new ArrayList<>();
+	private List<Filme> filmesAssistidos = new ArrayList<>();
+
+	public List<Filme> getFilmesAssistidos() {
+		return filmesAssistidos;
+	}
 
 	public List<RecomendaFilme> getFilmesRecomendados() {
 		return filmesRecomendados;
@@ -104,6 +114,22 @@ public class Usuario {
 	public String toString() {
 		return "Usuario [nome=" + nome + ", dataNascimento=" + dataNascimento + ", endereco=" + endereco
 				+ "]";
+	}
+	
+	
+	public void assistirFilme(Filme filme) {
+		System.out.println("Assistir o Filme: " + filme.toString());
+		if(getFilmesAssistidos().size() > 0) {
+			filmesAssistidos.add(filme);
+		}else {
+			System.out.println("Assistindo o primeiro filme!!!");
+			filmesAssistidos.add(filme);
+		}	
+	}
+	
+	public void getGeneroFilmeMaisAssitido() {
+
+		
 	}
 	
 	
