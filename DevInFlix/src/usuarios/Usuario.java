@@ -1,14 +1,22 @@
 package usuarios;
 
+import java.time.Period;
+import java.util.ArrayList;
 import java.util.List;
 
 import filmes.Filme;
+import recomendacoes.RecomendaFilme;
 
 public class Usuario {
 	private String nome;
 	private String dataNascimento;
 	private String endereco;
-	
+	private List<RecomendaFilme> filmesRecomendados = new ArrayList<>();
+
+	public List<RecomendaFilme> getFilmesRecomendados() {
+		return filmesRecomendados;
+	}
+
 	public Usuario(String nome, String dataNascimento, String endereco) {
 		super();
 		this.nome = nome;
@@ -57,7 +65,49 @@ public class Usuario {
 		
 		for(Filme filme:filmes) {
 			System.out.println(filme.toString());
+		}	
+		
+	}
+	
+	/*
+	 	usuário pode sugerir apenas UM filme num período de 1 mês, 
+	  
+	 */
+	public void sugerirFilmePlataforma(RecomendaFilme filme) {
+		System.out.println("Recomendar filme para plataforma...");
+
+		boolean permitidoRecomendarFilme = true;	
+		
+		if(getFilmesRecomendados().size() > 0) {
+			for(RecomendaFilme filmeRecomendado:getFilmesRecomendados()) {
+				Period period = Period.between(filmeRecomendado.getDataRecomendacao(), filme.getDataRecomendacao());
+				int qtdeMes = period.getMonths();
+				if(qtdeMes <= 0) {
+					System.out.println("Não permitido recomendar, pois já tem uma recomendação feita no último mês!!!");
+					permitidoRecomendarFilme = false;
+					break;
+				}
+			}
+		}else {
+			System.out.println("Primeiro filme sendo recomendado para plataforma agora!!!");
+		}
+		
+		if(permitidoRecomendarFilme) {
+			filmesRecomendados.add(filme);
+			System.out.println("Filme recomendado com sucesso!!!");
+			System.out.println(filme.toString());
 		}
 		
 	}
+
+	@Override
+	public String toString() {
+		return "Usuario [nome=" + nome + ", dataNascimento=" + dataNascimento + ", endereco=" + endereco
+				+ "]";
+	}
+	
+	
 }
+
+
+

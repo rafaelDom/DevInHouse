@@ -1,8 +1,9 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDate;
+
 
 import filmes.Filme;
 import filmes.Genero;
+import recomendacoes.RecomendaFilme;
 import usuarios.Usuario;
 
 public class Main {
@@ -10,6 +11,26 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		
+		
+		
+		/*
+		TESTE PARA O EXERCICIO [M1S03] - Ex 7 - O melhor catálogo de filmes++
+		LocalDate testeData = null;
+		LocalDate dataAgr = testeData.now();
+		
+		Usuario usuario1 = new Usuario("Usuario1", "01/01/2001", "Rua XPTO n 185");
+		Filme filme1 = new Filme("Filme1","XXXXX","www.www.com.br/fimes",Genero.ACAO);
+		RecomendaFilme recomendaFilme = new RecomendaFilme(filme1.getNome(), filme1.getSinopse(), filme1.getLink(), filme1.getGenero(), dataAgr, usuario1);
+		usuario1.sugerirFilmePlataforma(recomendaFilme);
+		RecomendaFilme recomendaFilme1 = new RecomendaFilme(filme1.getNome(), filme1.getSinopse(), filme1.getLink(), filme1.getGenero(), dataAgr.plusMonths(1), usuario1);
+		usuario1.sugerirFilmePlataforma(recomendaFilme1);
+		*/
+		
+		
+		
+		/*
+		 * EXERCICIO [M1S03] - Ex 6 - Unindo todos os pontos
 		Filme filme1 = new Filme("Filme1","XXXXX","www.www.com.br/fimes",Genero.ACAO);
 		Filme filme2 = new Filme("Filme2","XXXXX","www.www.com.br/fimes",Genero.AVENTURA);
 		Filme filme3 = new Filme("Filme3","XXXXX","www.www.com.br/fimes",Genero.COMEDIA);
@@ -47,7 +68,7 @@ public class Main {
 		usuario3.descurtirFilme(filme6);
 		usuario3.indicarFilme(usuario4, filme6);
 		usuario3.sugerirFilmesPlataforma(listaFilme);
-		
+		*/
 	}
 
 }
