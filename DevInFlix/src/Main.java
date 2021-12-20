@@ -20,6 +20,9 @@ public class Main {
 		usuario1.assistirFilme(filme1);
 		usuario1.assistirFilme(filme1);
 		usuario1.assistirFilme(filme1);
+		usuario1.assistirFilme(filme1);
+		usuario1.assistirFilme(filme2);
+		usuario1.assistirFilme(filme2);
 		usuario1.assistirFilme(filme2);
 		usuario1.assistirFilme(filme2);
 		usuario1.assistirFilme(filme3);

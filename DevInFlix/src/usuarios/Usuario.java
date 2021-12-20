@@ -6,7 +6,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import filmes.Filme;
 import filmes.Genero;
@@ -128,11 +130,43 @@ public class Usuario {
 	}
 	
 	public void getGeneroFilmeMaisAssitido() {
-
+		List<String> generosContabilizados = new ArrayList<String>();
+		int qtdeVezesAssistidoPorGenero = 0;
+		List <String> generoMaisAssistido = new ArrayList<String>();
 		
+		for(Filme filme:filmesAssistidos) {
+			if(!generosContabilizados.contains(filme.getGenero().toString())) {
+				int qtdeVezesAssistidoPorGeneroAux = totalGenero(filme.getGenero().toString());
+				if(qtdeVezesAssistidoPorGenero <= qtdeVezesAssistidoPorGeneroAux) {
+					qtdeVezesAssistidoPorGenero = qtdeVezesAssistidoPorGeneroAux;
+					generoMaisAssistido.add(filme.getGenero().toString());
+				}
+				generosContabilizados.add(filme.getGenero().toString());
+			}
+		}
+		
+		if(qtdeVezesAssistidoPorGenero > 0 && generoMaisAssistido.size() > 0) {
+			if(generoMaisAssistido.size() == 1) {
+				System.out.println("O genero mais assistido é: " + generoMaisAssistido + " ele foi assistido " + qtdeVezesAssistidoPorGenero + " vezes!!!");
+			}else {
+				for(String genero:generoMaisAssistido) {
+					System.out.println("O genero mais assistido é: " + genero + " ele foi assistido " + qtdeVezesAssistidoPorGenero + " vezes!!!");
+				}
+			}
+		}else {
+			System.out.println("Não foi possível verificar o filme mais assistido por genero!!!");
+		}
 	}
 	
-	
+	public int totalGenero(String generoFilme) {
+		int contador = 0;
+		for(Filme filme:filmesAssistidos) {
+			if(filme.getGenero().toString().equals(generoFilme)) {
+				contador = contador + 1;
+			}
+		}
+		return contador;
+	}
 }
 
 
