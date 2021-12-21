@@ -123,6 +123,7 @@ public class Usuario {
 		System.out.println("Assistir o Filme: " + filme.toString());
 		if(getFilmesAssistidos().size() > 0) {
 			filmesAssistidos.add(filme);
+			
 		}else {
 			System.out.println("Assistindo o primeiro filme!!!");
 			filmesAssistidos.add(filme);
