@@ -17,6 +17,24 @@ public class Main {
 		Filme filme1 = new Filme("Filme1","XXXXX","www.www.com.br/fimes",Genero.ACAO);
 		Filme filme2 = new Filme("Filme2","XXXXX","www.www.com.br/fimes",Genero.AVENTURA);
 		Filme filme3 = new Filme("Filme3","XXXXX","www.www.com.br/fimes",Genero.COMEDIA);
+
+		Usuario usuario2 = new Usuario("Usuario2", "01/01/2001", "Rua XPTO n 186");
+		Usuario usuario3 = new Usuario("Usuario3", "01/01/2001", "Rua XPTO n 186");
+		Usuario usuario4 = new Usuario("Usuario4", "01/01/2001", "Rua XPTO n 186");
+		Usuario usuario5 = new Usuario("Usuario5", "01/01/2001", "Rua XPTO n 186");
+		Usuario usuario6 = new Usuario("Usuario6", "01/01/2001", "Rua XPTO n 186");
+		Usuario usuario7 = new Usuario("Usuario7", "01/01/2001", "Rua XPTO n 186");
+		Usuario usuario8 = new Usuario("Usuario8", "01/01/2001", "Rua XPTO n 186");
+		Usuario usuario9 = new Usuario("Usuario9", "01/01/2001", "Rua XPTO n 186");
+		Usuario usuario10 = new Usuario("Usuario10", "01/01/2001", "Rua XPTO n 186");
+		Usuario usuario11 = new Usuario("Usuario11", "01/01/2001", "Rua XPTO n 186");
+		Usuario usuario12 = new Usuario("Usuario12", "01/01/2001", "Rua XPTO n 186");
+		Usuario usuario13 = new Usuario("Usuario13", "01/01/2001", "Rua XPTO n 186");
+		Usuario usuario14 = new Usuario("Usuario14", "01/01/2001", "Rua XPTO n 186");
+		Usuario usuario15 = new Usuario("Usuario15", "01/01/2001", "Rua XPTO n 186");
+		
+		
+		
 		usuario1.assistirFilme(filme1);
 		usuario1.assistirFilme(filme1);
 		usuario1.assistirFilme(filme1);
@@ -28,6 +46,16 @@ public class Main {
 		usuario1.assistirFilme(filme3);
 		usuario1.getGeneroFilmeMaisAssitido();
 		
+		
+		usuario2.assistirFilme(filme1);
+		usuario3.assistirFilme(filme2);
+		usuario4.assistirFilme(filme3);
+		usuario5.assistirFilme(filme3);
+		usuario6.assistirFilme(filme2);
+		usuario7.assistirFilme(filme2);
+		usuario8.assistirFilme(filme2);
+		usuario9.assistirFilme(filme2);
+		usuario10.assistirFilme(filme3);
 		
 		
 		
