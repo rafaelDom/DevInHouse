@@ -12,6 +12,7 @@ import java.util.stream.Stream;
 
 import filmes.Filme;
 import filmes.Genero;
+import financeiro.Financeiro;
 import recomendacoes.RecomendaFilme;
 
 public class Usuario {
@@ -20,6 +21,7 @@ public class Usuario {
 	private String endereco;
 	private List<RecomendaFilme> filmesRecomendados = new ArrayList<>();
 	private List<Filme> filmesAssistidos = new ArrayList<>();
+	private Financeiro financeiro = new Financeiro();
 
 	public List<Filme> getFilmesAssistidos() {
 		return filmesAssistidos;
@@ -120,14 +122,19 @@ public class Usuario {
 	
 	
 	public void assistirFilme(Filme filme) {
-		System.out.println("Assistir o Filme: " + filme.toString());
-		if(getFilmesAssistidos().size() > 0) {
-			filmesAssistidos.add(filme);
-			
+		
+		if(financeiro.isInadiplente()) {
+			System.out.println("Assistir o Filme: " + filme.toString());
+			if(getFilmesAssistidos().size() > 0) {
+				filmesAssistidos.add(filme);
+				
+			}else {
+				System.out.println("Assistindo o primeiro filme!!!");
+				filmesAssistidos.add(filme);
+			}	
 		}else {
-			System.out.println("Assistindo o primeiro filme!!!");
-			filmesAssistidos.add(filme);
-		}	
+			System.out.println("Usuario inadiplente, não é possível assistir filme!!!");
+		}
 	}
 	
 	public void getGeneroFilmeMaisAssitido() {
