@@ -3,23 +3,28 @@ package financeiro;
 import usuarios.Usuario;
 
 public class Financeiro {
-	private boolean inadiplente;
 	private Usuario usuario;
+
+	
+	public Financeiro(Usuario usuario) {
+		super();
+		this.usuario = usuario;
+	}
 
 	public Usuario getUsuario() {
 		return usuario;
 	}
-
+	
 	public boolean isInadiplente() {
-		return inadiplente;
-	}
-
-	public void setInadiplente(boolean inadiplente) {
-		this.inadiplente = inadiplente;
+		if(verificarPendenciaFinanceira(usuario.getCpf())) {
+			return true;
+		}
+		return false;
 	}
 	
-	public void temPendenciaFinanceira() {
-		setInadiplente(true);
+	public boolean verificarPendenciaFinanceira(String cpf) {
+		// TO DO
+		return false;
 	}
 	
 	

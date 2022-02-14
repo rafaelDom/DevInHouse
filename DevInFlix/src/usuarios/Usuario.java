@@ -16,12 +16,12 @@ import financeiro.Financeiro;
 import recomendacoes.RecomendaFilme;
 
 public class Usuario {
+	private String cpf;
 	private String nome;
 	private String dataNascimento;
 	private String endereco;
 	private List<RecomendaFilme> filmesRecomendados = new ArrayList<>();
 	private List<Filme> filmesAssistidos = new ArrayList<>();
-	private Financeiro financeiro = new Financeiro();
 
 	public List<Filme> getFilmesAssistidos() {
 		return filmesAssistidos;
@@ -36,6 +36,14 @@ public class Usuario {
 		this.nome = nome;
 		this.dataNascimento = dataNascimento;
 		this.endereco = endereco;
+	}
+	
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
 	public String getNome() {
@@ -122,19 +130,14 @@ public class Usuario {
 	
 	
 	public void assistirFilme(Filme filme) {
-		
-		if(financeiro.isInadiplente()) {
-			System.out.println("Assistir o Filme: " + filme.toString());
-			if(getFilmesAssistidos().size() > 0) {
-				filmesAssistidos.add(filme);
-				
-			}else {
-				System.out.println("Assistindo o primeiro filme!!!");
-				filmesAssistidos.add(filme);
-			}	
+		System.out.println("Assistir o Filme: " + filme.toString());
+		if(getFilmesAssistidos().size() > 0) {
+			filmesAssistidos.add(filme);
+			
 		}else {
-			System.out.println("Usuario inadiplente, não é possível assistir filme!!!");
-		}
+			System.out.println("Assistindo o primeiro filme!!!");
+			filmesAssistidos.add(filme);
+		}	
 	}
 	
 	public void getGeneroFilmeMaisAssitido() {
