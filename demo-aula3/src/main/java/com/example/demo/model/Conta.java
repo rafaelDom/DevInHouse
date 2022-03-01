@@ -1,6 +1,5 @@
 package com.example.demo.model;
 
-
 public class Conta {
 	private Integer conta = 0;
 	private Double saldo;
@@ -49,7 +48,11 @@ public class Conta {
 		
 		return false;
 	}
-
-
+	
+	
+	@Override
+	public String toString() {
+		return "Conta [conta=" + conta + ", saldo=" + saldo + ", cliente=" + cliente.getcpf() + "]";
+	}	
 	
 }
